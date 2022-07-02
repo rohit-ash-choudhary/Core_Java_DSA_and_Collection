@@ -5,6 +5,7 @@ public class ArrayPrint {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the len of array");
         int num=sc.nextInt();
+        sc.close();
         int[] arr=new int[num];
         System.out.println("Enter the element of array");
         for (int i = 0; i < arr.length; i++) {
