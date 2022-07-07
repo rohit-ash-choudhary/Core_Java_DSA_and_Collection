@@ -13,18 +13,18 @@ public class First_PositiveandNegitiveNumberOfArray {
         }
         int first_negtive=0;
         int first_positive=0;
-        int cnt=0;
         int pcnt=0;
         int ncnt=0;
+        int cnt=0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i]>0 && pcnt<1)
+            if(arr[i]>=0 && pcnt<1)
             {
                 first_positive=arr[i];
-                System.out.println(i);
+                System.out.println(arr[i]);
                 cnt++;
                 pcnt++;
 
-            } else if (arr[i]<0 && ncnt<0)  {
+            } if (arr[i]<0 && ncnt<1)  {
 
 
                 System.out.println(arr[i]);
