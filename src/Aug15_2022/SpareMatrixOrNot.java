@@ -2,7 +2,7 @@ package Aug15_2022;
 
 import java.util.Scanner;
 
-public class ProductOfDaignolOfMatrix {
+public class SpareMatrixOrNot {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the number of rows");
@@ -17,14 +17,22 @@ public class ProductOfDaignolOfMatrix {
             }
 
         }
-        int prod_of_daignol=1;
+        int count=0;
         for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if(arr[i][j]!=0)
+                {
+                    count++;
+                }
 
-                    prod_of_daignol*=arr[i][i];
-
-
-
+            }
         }
-        System.out.println("prod of the daignol of matrix" +prod_of_daignol);
+        if(count<(n*m/2))
+        {
+            System.out.println("Spare Matrix");
+        }
+        else {
+            System.out.println("Spare Matrix");
+        }
     }
 }

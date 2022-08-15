@@ -2,7 +2,7 @@ package Aug15_2022;
 
 import java.util.Scanner;
 
-public class ProductOfDaignolOfMatrix {
+public class SecDiagProduct {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the number of rows");
@@ -17,14 +17,16 @@ public class ProductOfDaignolOfMatrix {
             }
 
         }
-        int prod_of_daignol=1;
-        for (int i = 0; i < arr.length; i++) {
-
-                    prod_of_daignol*=arr[i][i];
-
-
+        int prod=1;
+        int i=0;
+        int j=m-1;
+        while(i<n && j>-1)
+        {
+            prod*=arr[i][j];
+            i++;
+            j--;
 
         }
-        System.out.println("prod of the daignol of matrix" +prod_of_daignol);
+        System.out.println(prod);
     }
 }
