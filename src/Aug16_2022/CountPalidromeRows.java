@@ -1,0 +1,44 @@
+package Aug16_2022;
+
+import java.util.Scanner;
+
+public class CountPalidromeRows {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number of rows");
+        int n=sc.nextInt();
+        System.out.println("Enter the number of columns");
+        int m=sc.nextInt();
+        int[][] arr=new int[n][m];
+        System.out.println("Enter the elements of matrix ");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j]=sc.nextInt();
+            }
+
+        }
+        int cnt=0;
+        for (int i = 0; i < n; i++) {
+            int l=0;
+            int k=m-1;
+
+            int flag=0;
+            while (l<k)
+            {
+                if(arr[i][l]!=arr[i][k])
+                {
+                    flag=1;
+                    break;
+                }
+                l++;
+                k--;
+            }
+            if(flag==0)
+            {
+                cnt+=1;
+            }
+
+        }
+        System.out.println(cnt);
+    }
+}
