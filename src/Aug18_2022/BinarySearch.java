@@ -2,7 +2,7 @@ package Aug18_2022;
 
 import java.util.Scanner;
 
-public class LinearSearch {
+public class BinarySearch {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the len of array");
@@ -16,19 +16,22 @@ public class LinearSearch {
 
 
         }
-        boolean flag=false;
-
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i]==target)
+        int intial_index=0;
+        int last_index=arr.length-1;
+        while (intial_index<=last_index)
+        {
+            int mid=(intial_index+last_index)/2;
+            if(arr[mid]==target)
             {
-                flag=true;
-                System.out.println("Element find at index + "+ i);
+                System.out.println("element find at index + "+mid );
                 break;
             }
-        }
-        if (!flag)
-        {
-            System.out.println("Element not present in array");
+            else if(target>arr[mid])
+            {
+                intial_index=mid+1;
+            } else {
+                last_index=mid-1;
+            }
         }
     }
 }

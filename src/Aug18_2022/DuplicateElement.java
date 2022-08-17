@@ -1,14 +1,16 @@
 package Aug18_2022;
+/*
+Using Set
 
-import java.util.Scanner;
+ */
+import java.util.*;
 
-public class LinearSearch {
+public class DuplicateElement {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the len of array");
         int len=sc.nextInt();
-        System.out.println("Enter elements want to search");
-        int target=sc.nextInt();
+
         int[] arr=new int[len];
         System.out.println("Enter the element of String array");
         for (int i = 0; i < arr.length; i++) {
@@ -16,19 +18,12 @@ public class LinearSearch {
 
 
         }
-        boolean flag=false;
-
+        Set <Integer> values=new HashSet<>();
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i]==target)
-            {
-                flag=true;
-                System.out.println("Element find at index + "+ i);
-                break;
+            if(!values.add(arr[i])){
+                System.out.println(arr[i]);
             }
-        }
-        if (!flag)
-        {
-            System.out.println("Element not present in array");
+
         }
     }
 }

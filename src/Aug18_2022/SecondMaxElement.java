@@ -2,13 +2,12 @@ package Aug18_2022;
 
 import java.util.Scanner;
 
-public class LinearSearch {
+public class SecondMaxElement {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the len of array");
         int len=sc.nextInt();
-        System.out.println("Enter elements want to search");
-        int target=sc.nextInt();
+
         int[] arr=new int[len];
         System.out.println("Enter the element of String array");
         for (int i = 0; i < arr.length; i++) {
@@ -16,19 +15,19 @@ public class LinearSearch {
 
 
         }
-        boolean flag=false;
-
+        int first_max=Integer.MIN_VALUE;
+        int second_max=Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i]==target)
+            if(arr[i]>first_max)
             {
-                flag=true;
-                System.out.println("Element find at index + "+ i);
-                break;
+                second_max=first_max;
+                first_max=arr[i];
+            } else if (arr[i]!=first_max && arr[i]>second_max) {
+                second_max=arr[i];
             }
+
         }
-        if (!flag)
-        {
-            System.out.println("Element not present in array");
-        }
+        System.out.println(second_max);
+
     }
 }
